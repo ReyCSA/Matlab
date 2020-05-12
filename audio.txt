@@ -1,0 +1,28 @@
+fs = 6000
+
+y=wavrecord(2*fs,fs)
+
+wavplay(y,fs)
+
+plot(y)
+
+maxref=max(abs(y))
+
+ynor = y/maxref
+
+wavwrite (y,fs,'Voz/rey.wav');
+
+fs = 44100
+grabar = wavrecord(1.5*fs,fs)
+sound(grabar, fs, 16) %Reproduce
+wavwrite (grabar,fs,16,'Voz\rey.wav') %guarda
+
+function [snd_norm]= normalizar(sonido)
+maximo = max (abs(sonido));
+n = length(sonido);
+snd_norm = zeros(n,1);
+
+for i = 1:1:n
+	snd_norm(i) = sonido(i)/maximo;
+end
+end

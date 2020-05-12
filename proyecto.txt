@@ -1,0 +1,11 @@
+filename = 'Bienvenida al sistema.wav';
+
+[y, fs, nbits] = wavread(filename)
+
+sound(y, fs, nbits)
+
+filename = 'Bienvenida al sistema.wav';
+
+[y, fs, nbits] = wavread(filename)
+
+sound(y, fs, nbits)
